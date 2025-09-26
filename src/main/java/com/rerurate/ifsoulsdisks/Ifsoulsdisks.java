@@ -7,6 +7,7 @@ import com.mojang.logging.LogUtils;
 import com.rerurate.ifsoulsdisks.applied.stack.SoulsStackExportStrategy;
 import com.rerurate.ifsoulsdisks.applied.stack.SoulsStackImportStrategy;
 import com.rerurate.ifsoulsdisks.data.IFSDLangProvider;
+import com.rerurate.ifsoulsdisks.data.IFSDRecipeProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
@@ -64,5 +65,6 @@ public class Ifsoulsdisks extends ModuleController {
         );
 
         event.getGenerator().addProvider(true, new IFSDLangProvider(event.getGenerator().getPackOutput(), MODID, "en_us"));
+        event.getGenerator().addProvider(true, new IFSDRecipeProvider(event.getGenerator()));
     }
 }
