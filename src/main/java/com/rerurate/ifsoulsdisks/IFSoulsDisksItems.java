@@ -28,39 +28,39 @@ public class IFSoulsDisksItems {
 
     public static final RegistryObject<Item> SOULS_CELL_HOUSING = ITEMS.register("souls_cell_housing", IFSoulsDisksItems::basic);
 
-    public static final RegistryObject<Item> SOULS_CELL_1K = ITEMS.register("souls_storage_cell_1k",
+    public static final RegistryObject<Item> SOULS_STORAGE_CELL_1K = ITEMS.register("souls_storage_cell_1k",
             () -> new SoulsStorageCell(properties().stacksTo(1), StorageTier.SIZE_1K, SOULS_CELL_HOUSING.get()));
-    public static final RegistryObject<Item> SOULS_CELL_4K = ITEMS.register("souls_storage_cell_4k",
+    public static final RegistryObject<Item> SOULS_STORAGE_CELL_4K = ITEMS.register("souls_storage_cell_4k",
             () -> new SoulsStorageCell(properties().stacksTo(1), StorageTier.SIZE_4K, SOULS_CELL_HOUSING.get()));
-    public static final RegistryObject<Item> SOULS_CELL_16K = ITEMS.register("souls_storage_cell_16k",
+    public static final RegistryObject<Item> SOULS_STORAGE_CELL_16K = ITEMS.register("souls_storage_cell_16k",
             () -> new SoulsStorageCell(properties().stacksTo(1), StorageTier.SIZE_16K, SOULS_CELL_HOUSING.get()));
-    public static final RegistryObject<Item> SOULS_CELL_64K = ITEMS.register("souls_storage_cell_64k",
+    public static final RegistryObject<Item> SOULS_STORAGE_CELL_64K = ITEMS.register("souls_storage_cell_64k",
             () -> new SoulsStorageCell(properties().stacksTo(1), StorageTier.SIZE_64K, SOULS_CELL_HOUSING.get()));
-    public static final RegistryObject<Item> SOULS_CELL_256K = ITEMS.register("souls_storage_cell_256k",
+    public static final RegistryObject<Item> SOULS_STORAGE_CELL_256K = ITEMS.register("souls_storage_cell_256k",
             () -> new SoulsStorageCell(properties().stacksTo(1), StorageTier.SIZE_256K,
                     SOULS_CELL_HOUSING.get()));
 
     public static final RegistryObject<CreativeModeTab> IF_SOULS_DISKS_TAB = TABS.register("if_souls_disks_tab",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.ifsoulsdisks"))
-                    .icon(() -> SOULS_CELL_1K.get().getDefaultInstance())
+                    .icon(() -> SOULS_STORAGE_CELL_1K.get().getDefaultInstance())
                     .displayItems((parameters, output) -> {
                         output.accept(SOULS_CELL_HOUSING.get());
-                        output.accept(SOULS_CELL_1K.get());
-                        output.accept(SOULS_CELL_4K.get());
-                        output.accept(SOULS_CELL_16K.get());
-                        output.accept(SOULS_CELL_64K.get());
-                        output.accept(SOULS_CELL_256K.get());
+                        output.accept(SOULS_STORAGE_CELL_1K.get());
+                        output.accept(SOULS_STORAGE_CELL_4K.get());
+                        output.accept(SOULS_STORAGE_CELL_16K.get());
+                        output.accept(SOULS_STORAGE_CELL_64K.get());
+                        output.accept(SOULS_STORAGE_CELL_256K.get());
                     })
                     .build());
 
     public static RegistryObject<Item> get(SoulsStorageTier tier) {
         return switch (tier) {
-            case CELL_1K -> SOULS_CELL_1K;
-            case CELL_4K -> SOULS_CELL_4K;
-            case CELL_16K -> SOULS_CELL_16K;
-            case CELL_64K -> SOULS_CELL_64K;
-            case CELL_256K -> SOULS_CELL_256K;
+            case CELL_1K -> SOULS_STORAGE_CELL_1K;
+            case CELL_4K -> SOULS_STORAGE_CELL_4K;
+            case CELL_16K -> SOULS_STORAGE_CELL_16K;
+            case CELL_64K -> SOULS_STORAGE_CELL_64K;
+            case CELL_256K -> SOULS_STORAGE_CELL_256K;
         };
     }
 
